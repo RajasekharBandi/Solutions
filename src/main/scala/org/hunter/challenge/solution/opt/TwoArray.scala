@@ -1,5 +1,4 @@
-package org.hunter.challenge.solution.codility
-
+package org.hunter.challenge.solution.opt
 
 /**
   * Created by Hunter on 2/03/2018.

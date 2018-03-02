@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.hackerrank
+package org.hunter.challenge.solution.opt
 
 import scala.collection.mutable
 

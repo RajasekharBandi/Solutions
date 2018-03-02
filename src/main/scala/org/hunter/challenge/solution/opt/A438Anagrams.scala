@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.leetcode
+package org.hunter.challenge.solution.opt
 
 import scala.collection.mutable.ArrayBuffer
 

@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.leetcode
+package org.hunter.challenge.solution.opt
 
 /**
   * Created by Hunter on 1/03/2018.

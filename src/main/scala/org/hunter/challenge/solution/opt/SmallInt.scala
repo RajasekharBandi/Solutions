@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.codility
+package org.hunter.challenge.solution.opt
 
 import scala.util.Sorting
 
