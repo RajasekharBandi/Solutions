@@ -4,6 +4,8 @@ import scala.collection.mutable.{Set => mSet}
 
 /**
   * Created by Hunter on 2/03/2018.
+  *
+  *
   */
 object OddOccurrencesInArray {
   def main(args: Array[String]): Unit = {
@@ -22,8 +24,6 @@ object OddOccurrencesInArray {
         set += element
       }
     }
-
-
     return set.head
   }
 

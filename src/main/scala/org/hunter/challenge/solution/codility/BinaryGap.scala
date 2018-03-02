@@ -2,26 +2,28 @@ package org.hunter.challenge.solution.codility
 
 /**
   * Created by Hunter on 2/03/2018.
+  *
+  * take care of 110, trailing 0
   */
 object BinaryGap {
   def main(args: Array[String]): Unit = {
-    val num=6
+    val num = 6
     println(solution(num))
   }
 
   def solution(n: Int): Int = {
     // write your code in Scala 2.12
-    val str=Integer.toBinaryString(n)
-    val trailingStr=str.substring(0,str.lastIndexOf("1"))
-    val arr=trailingStr.split("1")
-    var max=0
+    val str = Integer.toBinaryString(n)
+    val trailingStr = str.substring(0, str.lastIndexOf("1"))
+    val arr = trailingStr.split("1")
 
-    for(i<-0 until arr.length){
-      if(max<arr(i).length()){
-        max=arr(i).length()
-      }
+    val lenArr = arr.map(_.length)
+
+    if (lenArr.isEmpty) {
+      0
+    } else {
+      lenArr.max
     }
-    return max
   }
 
 }

@@ -1,9 +1,9 @@
 package org.hunter.challenge.solution.codility
 
-import scala.collection.mutable.{Set => mSet}
-
 /**
   * Created by Hunter on 2/03/2018.
+  *
+  * take care of empty array
   */
 object CyclicRotation {
   def main(args: Array[String]): Unit = {
