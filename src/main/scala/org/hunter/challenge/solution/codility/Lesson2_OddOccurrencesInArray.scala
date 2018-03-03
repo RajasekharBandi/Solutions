@@ -4,8 +4,6 @@ import scala.collection.mutable.{Set => mSet}
 
 /**
   * Created by Hunter on 2/03/2018.
-  *
-  *
   */
 object Lesson2_OddOccurrencesInArray {
   def main(args: Array[String]): Unit = {

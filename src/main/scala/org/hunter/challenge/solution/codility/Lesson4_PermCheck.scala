@@ -9,10 +9,15 @@ import scala.util.Sorting
   */
 object Lesson4_PermCheck {
   def main(args: Array[String]): Unit = {
-    println(solution(Array[Int](4,1,3)))
+    println(solution(Array[Int](1,2,3)))
   }
 
-  def solution(a: Array[Int]): Int={
+  /**
+    * 100%
+    * @param a
+    * @return
+    */
+  def solution2(a: Array[Int]): Int={
     Sorting.quickSort(a)
 
     for(i<-0 until a.length){
@@ -23,5 +28,23 @@ object Lesson4_PermCheck {
 
     return 1
   }
+
+  /**
+    * 72%
+    * @param a
+    * @return
+    */
+  def solution(a: Array[Int]): Int={
+    Sorting.quickSort(a)
+
+    def getNum(arr:Array[Int],num:Int):Int={
+      if(arr.isEmpty) 1
+      else if(arr.head!=num+1) 0
+      else getNum(arr.tail,num+1)
+    }
+    getNum(a,0)
+  }
+
+
 
 }

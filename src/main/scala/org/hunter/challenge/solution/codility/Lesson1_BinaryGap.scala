@@ -3,7 +3,7 @@ package org.hunter.challenge.solution.codility
 /**
   * Created by Hunter on 2/03/2018.
   *
-  * take care of 110, trailing 0
+  * take care of 110, trim 0
   */
 object Lesson1_BinaryGap {
   def main(args: Array[String]): Unit = {
@@ -14,15 +14,14 @@ object Lesson1_BinaryGap {
   def solution(n: Int): Int = {
     // write your code in Scala 2.12
     val str = Integer.toBinaryString(n)
-    val trailingStr = str.substring(0, str.lastIndexOf("1"))
-    val arr = trailingStr.split("1")
+    val trimStr = str.substring(0, str.lastIndexOf("1"))
+    val arr = trimStr.split("1")
 
     val lenArr = arr.map(_.length)
 
-    if (lenArr.isEmpty) {
-      0
-    } else {
-      lenArr.max
+    lenArr.length match {
+      case 0 => 0
+      case _ =>lenArr.max
     }
   }
 

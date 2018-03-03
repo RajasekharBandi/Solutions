@@ -7,26 +7,25 @@ package org.hunter.challenge.solution.codility
   */
 object Lesson3_TapeEquilibrium {
   def main(args: Array[String]): Unit = {
-        val a = Array[Int](1000,-1000)
-        println(solution(a))
-//    val a = Array(1000,-1000)
-//    val (left, right) = a.splitAt(0)
-//    println(left.mkString(" "))
-//    println(right.mkString(" "))
-
+    val a = Array[Int](1,1)
+//    val a = Array[Int](3,1,2,4,3)
+    println(solution(a))
   }
 
-
-  def solution(a: Array[Int]): Int = {
+  /**
+    * 100%
+    * @param a
+    * @return
+    */
+  def solution3(a: Array[Int]): Int = {
     // write your code in Scala 2.12
     var sumLeft = a(0)
     val sumAll = a.sum
     var sumRight = sumAll - sumLeft
     var min = Math.abs(sumLeft - sumRight)
-    if(a.length==2){
+    if (a.length == 2) {
       return min
     }
-
     for (i <- 1 until a.length) {
       sumLeft = sumLeft + a(i)
       sumRight = sumAll - sumLeft
@@ -38,6 +37,29 @@ object Lesson3_TapeEquilibrium {
 
     }
     min
+  }
+
+  /**
+    * 75%
+    * @param a
+    * @return
+    */
+  def solution(a: Array[Int]): Int = {
+    // write your code in Scala 2.12
+    def diff(arrLeft: Array[Int],sumLeft:Int,sumAll:Int,minDiff: Int): Int = {
+      if (arrLeft.length == 1) minDiff
+      else {
+        val left = sumLeft + arrLeft.head
+        val right = sumAll -  left
+        val diffCur = Math.abs(left - right)
+        diff(arrLeft.tail,left,sumAll,Math.min(diffCur, minDiff))
+      }
+    }
+    a.length match {
+      case 0 => 0
+      case 1 => a.head
+      case _ => diff(a,0,a.sum,Int.MaxValue)
+    }
   }
 
   def solution2(a: Array[Int]): Int = {
