@@ -7,7 +7,7 @@ import scala.collection.mutable.{Set => mSet}
   *
   *
   */
-object OddOccurrencesInArray {
+object Lesson2_OddOccurrencesInArray {
   def main(args: Array[String]): Unit = {
     val num = Array(9, 3, 9, 3, 7)
 

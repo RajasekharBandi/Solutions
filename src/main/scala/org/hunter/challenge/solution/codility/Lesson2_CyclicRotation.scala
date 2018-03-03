@@ -5,7 +5,7 @@ package org.hunter.challenge.solution.codility
   *
   * take care of empty array
   */
-object CyclicRotation {
+object Lesson2_CyclicRotation {
   def main(args: Array[String]): Unit = {
     val num = Array[Int]()
 

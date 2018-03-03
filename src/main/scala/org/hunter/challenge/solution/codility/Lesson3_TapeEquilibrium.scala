@@ -5,7 +5,7 @@ package org.hunter.challenge.solution.codility
   *
   * take care of array length 2
   */
-object TapeEquilibrium {
+object Lesson3_TapeEquilibrium {
   def main(args: Array[String]): Unit = {
         val a = Array[Int](1000,-1000)
         println(solution(a))

@@ -5,7 +5,7 @@ package org.hunter.challenge.solution.codility
   *
   * take care of 110, trailing 0
   */
-object BinaryGap {
+object Lesson1_BinaryGap {
   def main(args: Array[String]): Unit = {
     val num = 6
     println(solution(num))
