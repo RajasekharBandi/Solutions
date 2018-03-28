@@ -3,31 +3,35 @@ package org.hunter.challenge.solution.opt
 /**
   * Created by Hunter on 2/03/2018.
   *
-  * take care of 110, trailing 0
   */
 object Challenge {
   def main(args: Array[String]): Unit = {
-        val str = "100,10"
-        println(solution(str))
+    val str = "-1,-2"
+    val arr=Array("-1","-2")
+
+    println((arr.last+"").toInt)
+//    "-1".toInt
+//    println("-1".toInt)
+//    println(solution(str))
 
   }
 
   def solution(x: String): String = {
     // write your code in Scala 2.12
-    if(x.isEmpty){
+    if (x.isEmpty) {
       return "0"
     }
-    val arr=x.split(",")
-    val res=arr.fold("")(sum(_,_,"",0))
+    val arr = x.split(",")
+    val res = arr.fold("")(sum(_, _, "", 0))
     res
   }
 
   def sum(x: String, y: String, res: String, modular: Int): String = {
-    val (a,b)=complementary(x,y)
+    val (a, b) = complementary(x, y)
     if (a.isEmpty && b.isEmpty) {
-      if(modular==0){
+      if (modular == 0) {
         return res
-      }else{
+      } else {
         return modular + res
       }
     } else {

@@ -3,21 +3,19 @@ package org.hunter.challenge.solution.opt
 import scala.util.Random
 
 /**
-  * Created by Hunter on 3/03/2018.
+  * Created by Hunter on 2/03/2018.
   *
+  * take care of 110, trailing 0
   */
-object Challenge2 {
+object Challenge4 {
   def main(args: Array[String]): Unit = {
-
+    val num = 6
+//    println(solution(num))
   }
-
   case class StreamGenerator(seed: String = "Avira - the security company") {
     private[this] val random = new Random(seed.hashCode)
-
     private[this] def nextId: String = (random.nextInt(10) + 1).toString
-
     private[this] def nextName: String = random.nextString(7)
-
     private[this] def nextActionName: String = random.nextInt().abs % 1000 match {
       case 1 => "click"
       case x if x % 5 == 1 => "close"
@@ -25,7 +23,6 @@ object Challenge2 {
     }
 
     private[this] def nextTimestamp: Long = random.nextInt(Int.MaxValue / 2) + 1L
-
     private[this] def nextAction(prev: Action) = Action(nextId, nextActionName, prev.timestamp + nextTimestamp)
 
     val stream: Stream[Action] = Stream
@@ -57,37 +54,14 @@ object Challenge2 {
       case _ => DS.empty
     }
 
-    def limit(num: String): DS = {
-      DS(actions.take(num.toInt))
-    }
-
-    def max(field: String): String = field match {
-      case "id" => actions.maxBy(_.id.toInt) + ""
-      case "action" => "undefined"
-      case "timestamp" => actions.maxBy(_.timestamp) + ""
-    }
-
-    def avg(field: String): String = field match {
-      case "id" => actions.map(_.id.toInt).sum / actions.length + ""
-      case "action" => "undefined"
-      case "timestamp" => actions.map(_.timestamp).sum / actions.length + ""
-    }
-
-    def count(): String = {
-      actions.length + ""
-    }
   }
 
   def applyOp(op: String, ds: DS): DS = op split ':' map (_.trim) match {
     case Array("filter", query) => ds filter query
-    case Array("limit", num) => ds limit num
     case _ => DS.empty
   }
 
   def applyFinalOp(op: String, ds: DS): String = op.trim split ':' map (_.trim) match {
-    case Array("max", field) => ds max field
-    case Array("avg", field) => ds avg field
-    case Array("count") => ds count
     case _ => "undefined"
   }
 
@@ -98,6 +72,7 @@ object Challenge2 {
     val processedDS = operations.foldLeft(ds)((dataset, query) => applyOp(query, dataset))
     applyFinalOp(finalOp, processedDS)
   }
+
 
 
 }
