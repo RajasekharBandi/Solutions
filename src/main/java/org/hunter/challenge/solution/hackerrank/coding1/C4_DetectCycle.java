@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.hackerrank;
+package org.hunter.challenge.solution.hackerrank.coding1;
 
 import java.util.HashSet;
 import java.util.Set;

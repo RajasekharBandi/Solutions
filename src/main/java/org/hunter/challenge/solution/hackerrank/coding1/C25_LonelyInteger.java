@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.hackerrank;
+package org.hunter.challenge.solution.hackerrank.coding1;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Created by Hunter on 16/03/2018.
  */
-public class Lonely_Integer {
+public class C25_LonelyInteger {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();

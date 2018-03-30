@@ -1,4 +1,4 @@
-package org.hunter.challenge.solution.hackerrank;
+package org.hunter.challenge.solution.hackerrank.coding1;
 
 /**
  * Created by Hunter on 28/03/2018.
@@ -6,4 +6,6 @@ package org.hunter.challenge.solution.hackerrank;
 public class Node {
     int data;
     Node next;
+    Node left;
+    Node right;
 }
