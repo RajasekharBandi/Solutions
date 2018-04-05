@@ -1,5 +1,8 @@
 package org.hunter.challenge.solution.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Hunter on 15/03/2018.
  */
@@ -15,14 +18,11 @@ public class A26 {
     }
 
     public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0) return 0;
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
-                i++;
-                nums[i] = nums[j];
-            }
+        Set<Integer> set = new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+            set.add(nums[i]);
         }
-        return i + 1;
+
+        return set.size();
     }
 }

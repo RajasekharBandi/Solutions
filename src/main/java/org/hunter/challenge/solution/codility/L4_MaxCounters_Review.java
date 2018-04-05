@@ -7,15 +7,20 @@ public class L4_MaxCounters_Review {
     public static int[] solution(int N, int[] A) {
         int[] res = new int[N];
         int max = 0;
+        int preMax=0;
         for (int i = 0; i < A.length; i++) {
             if (A[i] <= N) {
+                res[A[i] - 1]=Math.max(res[A[i] - 1],preMax);
                 res[A[i] - 1] += 1;
+
                 int curr = res[A[i] - 1];
                 if (max < curr) {
                     max = curr;
                 }
             } else {
-                res[0]=max;
+                preMax=max;
+//                res[0]=max;
+//                res[A[i] - 1] += Math.max(res[A[i] - 1],max) +1 ;
 //                for (int j = 0; j < N; j++) {
 //                    res[j] = max;
 //                }
